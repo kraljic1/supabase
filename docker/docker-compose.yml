@@ -74,6 +74,7 @@ services:
     expose:
       - "8000"
     labels:
+      - "traefik.docker.network=ghhadvvvli78smm13kriwgw0"
       - "traefik.enable=true"
       - "traefik.http.middlewares.gzip.compress=true"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
