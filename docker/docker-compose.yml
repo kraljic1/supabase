@@ -162,6 +162,13 @@ services:
       GOTRUE_EXTERNAL_PHONE_ENABLED: ${ENABLE_PHONE_SIGNUP}
       GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
 
+      # Google OAuth (players of the live quiz and kviz uzivo). GoTrue only reads the
+      # GOTRUE_EXTERNAL_GOOGLE_* names, so map the GOOGLE_* variables set in Coolify.
+      GOTRUE_EXTERNAL_GOOGLE_ENABLED: ${GOOGLE_ENABLED}
+      GOTRUE_EXTERNAL_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOTRUE_EXTERNAL_GOOGLE_SECRET: ${GOOGLE_SECRET}
+      GOTRUE_EXTERNAL_GOOGLE_REDIRECT_URI: https://db.inquizicija.com/auth/v1/callback
+
   rest:
     container_name: supabase-rest
     image: postgrest/postgrest:v14.8
